@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
 <body>
     <div id="barra">
         <img src="./Img/Captura_de_tela_2026-09-30_120607-removebg-preview.png" alt="logo" id="logo">
+        <button id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="bdb"><span></span><span></span><span></span></button>
         <div id="bdb">
             <a href="#titulo"><p class="textoBarra">Home</p></a>
             <a href="#solucoes"><p class="textoBarra">Programas</p></a>
@@ -136,5 +137,15 @@
         </div>
         <p id="copyrite">©2026 Fluxa. Todos os direitos reservados</p>
     </div>
+<script>
+    const toggle = document.getElementById('menuToggle');
+    const barra = document.getElementById('barra');
+    function fecharMenu(){ barra.classList.remove('aberto'); toggle.setAttribute('aria-expanded','false'); }
+    toggle.addEventListener('click', () => {
+        const aberto = barra.classList.toggle('aberto');
+        toggle.setAttribute('aria-expanded', aberto);
+    });
+    document.querySelectorAll('#bdb a').forEach(a => a.addEventListener('click', fecharMenu));
+    </script>
 </body>
 </html>

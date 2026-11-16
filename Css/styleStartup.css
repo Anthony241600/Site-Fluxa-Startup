@@ -7,7 +7,7 @@ a{text-decoration: none; color: aliceblue;}
 #barra{width: 100%; height: 80px;display: flex;justify-content: space-between; align-items: center; margin-top: 20px;}
 .textoBarra{color: aliceblue; font-family: montserrat; font-size: 25px;}
 #btnAcessar{width: 75px; height: 40px;background: linear-gradient(to left, rgb(8, 102, 254), rgb(9, 152, 249)); border: 0; border-radius: 10px; color: aliceblue;}
-#logo{scale: 0.5; margin-top: 30px; margin-left: -80px;}
+#logo{scale: 0.6; margin-top: 30px; margin-left: -80px;}
 #titulo{display: flex; flex-direction: column; justify-content: center; align-items: center;}
 #cosinha{width: 500px; height: 50px; margin-top: 50px;background-color: rgba(52, 79, 113, 0.5); border-radius: 20px; display: flex; justify-content: center; align-items: center; font-family: poppins; color: aliceblue;}
 h1{width: 950px;  margin-top: 30px; font-family: bebas; font-size: 150px; text-align: center; background-image: linear-gradient(to bottom, rgb(255, 255, 255) 45px, rgb(8, 102, 254)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;}
@@ -59,3 +59,91 @@ h4{font-family: poppins; font-size: 30px; color: aliceblue; margin-top: 20px;}
 #btnAcesse:hover{background: linear-gradient(to left, rgb(8, 102, 254), rgb(9, 152, 249)); border: 0;}
 #bdb{ width: 70%; display: flex; flex-direction: row; justify-content: space-around;}
 #suporte{width: 80px; height: 80px;}
+/* ===== Menu hambúrguer (escondido no desktop) ===== */
+#menuToggle{display: none;}
+img{max-width: 100%;}
+
+/* ===== Tablet ===== */
+@media (max-width: 1024px){
+  .textoBarra{font-size: 18px;}
+  #bdb{width: 75%;}
+  h1{width: 90%; font-size: 110px;}
+  h5{width: 80%;}
+  #kilua{flex-direction: column; height: auto; gap: 30px;}
+  #caxota, #caxita{width: 90%; max-width: 680px;}
+  #sobreNos{height: auto; flex-wrap: wrap; gap: 20px; align-items: center;}
+  #nico{width: 55%; margin-left: 0;}
+  #will{width: 35%; margin-left: 0;}
+  #imagem{width: 100%; text-align: center;}
+  #foguete{margin-top: 0;}
+  #logoRodape{width: 100%; max-width: 400px; height: auto;}
+}
+
+/* ===== Celular ===== */
+@media (max-width: 768px){
+  html, body{overflow-x: hidden;}
+
+  /* Barra + menu hambúrguer */
+  #barra{position: relative; height: 70px; margin-top: 0; padding: 0 20px; z-index: 10;}
+  #logo{scale: 1; width: 110px; height: auto; margin: 0;}
+  #menuToggle{display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 10px; background: transparent; border: 0; cursor: pointer;}
+  #menuToggle span{display: block; height: 3px; width: 100%; background: aliceblue; border-radius: 2px; transition: transform .3s, opacity .3s;}
+  #barra.aberto #menuToggle span:nth-child(1){transform: translateY(8px) rotate(45deg);}
+  #barra.aberto #menuToggle span:nth-child(2){opacity: 0;}
+  #barra.aberto #menuToggle span:nth-child(3){transform: translateY(-8px) rotate(-45deg);}
+  #bdb{display: none; position: absolute; top: 70px; left: 0; width: 100%; flex-direction: column; align-items: center; gap: 4px; padding: 15px 20px 25px; background-color: rgba(6, 21, 41, 0.97); border-bottom: 2px solid rgb(79, 155, 222); border-radius: 0 0 25px 25px;}
+  #barra.aberto #bdb{display: flex;}
+  #bdb a{width: 100%; text-align: center; padding: 10px 0;}
+  .textoBarra{font-size: 18px;}
+  #btnAcessar{width: 140px; margin-top: 10px;}
+
+  /* Hero */
+  #titulo{padding: 0 20px;}
+  #cosinha{width: 100%; max-width: 360px; height: auto; min-height: 44px; margin-top: 20px; padding: 10px 15px; text-align: center; font-size: 13px;}
+  h1{width: 100%; font-size: 64px; line-height: 1; margin-top: 20px; background-image: linear-gradient(to bottom, rgb(255, 255, 255) 30px, rgb(8, 102, 254));}
+  h5{width: 100%; font-size: 14px; line-height: 1.5;}
+  #caixaDeBotoes{flex-direction: column; align-items: center; gap: 15px; width: 100%; margin-top: 30px;}
+  #caixaDeBotoes a{width: 100%; max-width: 260px;}
+  #btnVP, #btnCA{width: 100%; height: 48px;}
+
+  /* Números */
+  #coisa{width: 90%; height: auto; flex-wrap: wrap; row-gap: 25px; padding: 25px 10px; margin-top: 40px; border-radius: 30px;}
+  .quadradinhos{width: 50%; text-align: center;}
+  .escritos{font-size: 13px;}
+
+  /* Programas / Desenvolvimentos */
+  #kilua{margin-top: 20px; width: 100%;}
+  #solucoes, #vantagens{width: 100%; padding: 0 5%; text-align: center;}
+  h3{font-size: 20px; line-height: 1.3;}
+  #caxota{width: 100%; height: auto; padding: 10px 0; border-radius: 30px;}
+  .cards{width: 100%; padding: 20px 25px; text-align: center; display: flex; flex-direction: column; align-items: center;}
+  .cards .escritos{margin: 5px 0;}
+  #caxita{width: 100%; height: auto; padding: 20px 0; border-radius: 30px;}
+  .maisCards{width: 100%; height: auto; padding: 20px; display: flex; flex-direction: column; align-items: center;}
+  .pregs, .pregs:hover{scale: 1; width: 200px; height: auto;}
+  #btnAcesse{margin-top: 20px;}
+
+  /* Sobre nós */
+  #sobreNos{width: 90%; flex-direction: column; align-items: center; text-align: center; margin-top: 40px; padding: 25px 20px; border-radius: 30px;}
+  #nico, #will, #imagem{width: 100%; margin-left: 0;}
+  h4{font-size: 22px; margin-top: 10px;}
+  #foguete{width: 160px; height: 160px;}
+
+  /* Rodapé */
+  #contato{height: auto; flex-direction: column; align-items: center; gap: 30px; padding: 30px 20px 20px; margin-top: 40px; text-align: center;}
+  #logoRodape{width: 160px; height: auto; padding: 0; margin: 0;}
+  .praga, #diabo{width: 100%; height: auto;}
+  #nav{text-align: center;}
+  #muitosId{justify-content: center;}
+  .lagos{margin: 0 8px;}
+  #seila{width: 100%; max-width: 360px;}
+  #input{flex: 1; min-width: 0; width: auto; padding: 0 10px; color: aliceblue;}
+  #copyrite{position: static; align-self: center; height: auto; font-size: 12px;}
+}
+
+/* ===== Celulares pequenos ===== */
+@media (max-width: 380px){
+  h1{font-size: 52px;}
+  h3{font-size: 18px;}
+  .nums{font-size: 15px;}
+}
